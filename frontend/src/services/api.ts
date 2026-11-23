@@ -8,6 +8,14 @@ import type {
   ViewportState,
 } from "../types/viewport";
 
+import type {
+  AgentExecuteRequest,
+  AgentPlanRequest,
+  AgentPlanResponse,
+  CopilotResponse,
+  ProvenanceRecord,
+} from "../types/agent";
+
 const API_BASE = "http://127.0.0.1:8000";
 
 export interface DatasetMetadata {
@@ -193,5 +201,25 @@ export const api = {
 
   getBookmark(bookmarkId: string): Promise<Partial<ViewportState>> {
     return fetchJson(`${API_BASE}/data/bookmarks/${bookmarkId}`);
+  },
+
+  planQuery(req: AgentPlanRequest): Promise<AgentPlanResponse> {
+    return fetchJson(`${API_BASE}/agent/plan`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(req),
+    });
+  },
+
+  executePlan(req: AgentExecuteRequest): Promise<CopilotResponse> {
+    return fetchJson(`${API_BASE}/agent/execute`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(req),
+    });
+  },
+
+  getProvenance(toolCallId: string): Promise<ProvenanceRecord> {
+    return fetchJson(`${API_BASE}/agent/provenance/${toolCallId}`);
   },
 };

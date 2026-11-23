@@ -1,3 +1,5 @@
+import type { ViewportState } from "./viewport";
+
 export interface PlannedToolCall {
   step_id: string;
   tool_name: string;
@@ -24,6 +26,44 @@ export interface ProvenanceClaim {
 export interface CopilotResponse {
   session_id: string;
   claims: ProvenanceClaim[];
-  viewport_patch: Record<string, unknown> | null;
+  viewport_patch: Partial<ViewportState> | null;
   executed_tool_call_ids: string[];
+}
+
+export interface AgentPlanRequest {
+  session_id: string;
+  user_query: string;
+  viewport: ViewportState;
+  use_llm: boolean;
+  sparsity_threshold?: number;
+}
+
+export interface AgentPlanResponse {
+  session_id: string;
+  plan_id: string;
+  planner_mode: "gemini_llm" | "deterministic_fallback";
+  verification: PlanVerificationResult;
+}
+
+export interface AgentExecuteRequest {
+  session_id: string;
+  plan_id?: string | null;
+  user_query: string;
+  viewport: ViewportState;
+  approved_plan: PlannedToolCall[];
+  use_llm: boolean;
+  allow_confirmed_warnings: boolean;
+}
+
+export interface ProvenanceRecord {
+  tool_call_id: string;
+  step_id: string;
+  tool_name: string;
+  session_id: string;
+  executed_at: string;
+  latency_ms: number;
+  arguments: Record<string, unknown>;
+  output: Record<string, unknown>;
+  warnings: string[];
+  contact_sparsity_fraction: number | null;
 }
