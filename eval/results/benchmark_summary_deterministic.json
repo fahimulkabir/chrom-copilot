@@ -1,0 +1,22 @@
+[
+  {
+    "system": "full_chromcopilot",
+    "n_tasks": 35,
+    "exec_success_pct": 100.0,
+    "t1_t2_accuracy_pct": 100.0,
+    "t3_trap_catch_pct": 100.0,
+    "overall_accuracy_pct": 100.0,
+    "unsupported_claim_pct": 0.0,
+    "mean_latency_ms": 206.6
+  },
+  {
+    "system": "ablation_no_gate_no_visual",
+    "n_tasks": 35,
+    "exec_success_pct": 77.1,
+    "t1_t2_accuracy_pct": 88.0,
+    "t3_trap_catch_pct": 30.0,
+    "overall_accuracy_pct": 71.4,
+    "unsupported_claim_pct": 5.7,
+    "mean_latency_ms": 105.1
+  }
+]

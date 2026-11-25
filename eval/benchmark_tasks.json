@@ -1,0 +1,2509 @@
+{
+  "dataset_id": "rao2014_gm12878_k562",
+  "n_tasks": 35,
+  "tasks": [
+    {
+      "task_id": "T1_01",
+      "tier": "tier1_single_scale",
+      "category": "contact_map",
+      "query": "Fetch the contact map for GM12878 at MYC at 50kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "get_contact_map"
+      ],
+      "ground_truth": {
+        "metric_key": "total_contacts",
+        "value": 2728406.0,
+        "n_bins": 50,
+        "sparsity": 0.0
+      }
+    },
+    {
+      "task_id": "T1_02",
+      "tier": "tier1_single_scale",
+      "category": "contact_map",
+      "query": "Fetch the obs/exp contact map for K562 at MYC at 50kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "get_contact_map"
+      ],
+      "ground_truth": {
+        "metric_key": "total_contacts",
+        "value": 552204.0,
+        "n_bins": 50,
+        "sparsity": 0.0
+      }
+    },
+    {
+      "task_id": "T1_03",
+      "tier": "tier1_single_scale",
+      "category": "contact_map",
+      "query": "Fetch the contact map for K562 at HBB at 50kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr11",
+          "start": 4000000,
+          "end": 6500000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "get_contact_map"
+      ],
+      "ground_truth": {
+        "metric_key": "total_contacts",
+        "value": 537459.0,
+        "n_bins": 50,
+        "sparsity": 0.0
+      }
+    },
+    {
+      "task_id": "T1_04",
+      "tier": "tier1_single_scale",
+      "category": "contact_map",
+      "query": "Fetch the obs/exp contact map for GM12878 at BCL2 at 100kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr18",
+          "start": 59500000,
+          "end": 62000000
+        },
+        "resolution_bp": 100000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "get_contact_map"
+      ],
+      "ground_truth": {
+        "metric_key": "total_contacts",
+        "value": 2548989.0,
+        "n_bins": 25,
+        "sparsity": 0.0
+      }
+    },
+    {
+      "task_id": "T1_05",
+      "tier": "tier1_single_scale",
+      "category": "contact_map",
+      "query": "Fetch the contact map for K562 at GATA2 at 50kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr3",
+          "start": 127000000,
+          "end": 129500000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "get_contact_map"
+      ],
+      "ground_truth": {
+        "metric_key": "total_contacts",
+        "value": 534444.0,
+        "n_bins": 50,
+        "sparsity": 0.0
+      }
+    },
+    {
+      "task_id": "T1_06",
+      "tier": "tier1_single_scale",
+      "category": "ab_compartments",
+      "query": "Detect A/B compartment switches on chr18 between GM12878 and K562 at 250kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 250000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "compute_ab_compartments"
+      ],
+      "ground_truth": {
+        "metric_key": "n_switches",
+        "value": 50,
+        "n_bins": 313
+      }
+    },
+    {
+      "task_id": "T1_07",
+      "tier": "tier1_single_scale",
+      "category": "ab_compartments",
+      "query": "Detect A/B compartment switches on chr11 between GM12878 and K562 at 250kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 250000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "compute_ab_compartments"
+      ],
+      "ground_truth": {
+        "metric_key": "n_switches",
+        "value": 57,
+        "n_bins": 541
+      }
+    },
+    {
+      "task_id": "T1_08",
+      "tier": "tier1_single_scale",
+      "category": "ab_compartments",
+      "query": "Detect A/B compartment switches on chr8 between GM12878 and K562 at 250kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 250000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "compute_ab_compartments"
+      ],
+      "ground_truth": {
+        "metric_key": "n_switches",
+        "value": 92,
+        "n_bins": 586
+      }
+    },
+    {
+      "task_id": "T1_09",
+      "tier": "tier1_single_scale",
+      "category": "ab_compartments",
+      "query": "Detect A/B compartment switches on chr3 between GM12878 and K562 at 250kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 250000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "compute_ab_compartments"
+      ],
+      "ground_truth": {
+        "metric_key": "n_switches",
+        "value": 64,
+        "n_bins": 793
+      }
+    },
+    {
+      "task_id": "T1_10",
+      "tier": "tier1_single_scale",
+      "category": "ab_compartments",
+      "query": "Detect A/B compartment switches on chr18 between GM12878 and K562 at 100kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 100000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "compute_ab_compartments"
+      ],
+      "ground_truth": {
+        "metric_key": "n_switches",
+        "value": 131,
+        "n_bins": 781
+      }
+    },
+    {
+      "task_id": "T2_01",
+      "tier": "tier2_cross_scale",
+      "category": "tad_insulation_diff",
+      "query": "Compare MYC TAD insulation between GM12878 and K562 at 50kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "compute_tad_insulation",
+        "run_differential_test"
+      ],
+      "ground_truth": {
+        "metric_key": "p_value",
+        "value": 0.392642,
+        "effect_size": 0.0996,
+        "gm_boundaries": 5,
+        "k562_boundaries": 4
+      }
+    },
+    {
+      "task_id": "T2_02",
+      "tier": "tier2_cross_scale",
+      "category": "tad_insulation_diff",
+      "query": "Compare HBB TAD insulation between GM12878 and K562 at 50kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr11",
+          "start": 4000000,
+          "end": 6500000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "compute_tad_insulation",
+        "run_differential_test"
+      ],
+      "ground_truth": {
+        "metric_key": "p_value",
+        "value": 0.218492,
+        "effect_size": 0.1432,
+        "gm_boundaries": 5,
+        "k562_boundaries": 6
+      }
+    },
+    {
+      "task_id": "T2_03",
+      "tier": "tier2_cross_scale",
+      "category": "tad_insulation_diff",
+      "query": "Compare BCL2 TAD insulation between GM12878 and K562 at 50kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr18",
+          "start": 59500000,
+          "end": 62000000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "compute_tad_insulation",
+        "run_differential_test"
+      ],
+      "ground_truth": {
+        "metric_key": "p_value",
+        "value": 0.014256,
+        "effect_size": -0.2848,
+        "gm_boundaries": 5,
+        "k562_boundaries": 5
+      }
+    },
+    {
+      "task_id": "T2_04",
+      "tier": "tier2_cross_scale",
+      "category": "tad_insulation_diff",
+      "query": "Compare GATA2 TAD insulation between GM12878 and K562 at 50kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr3",
+          "start": 127000000,
+          "end": 129500000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "compute_tad_insulation",
+        "run_differential_test"
+      ],
+      "ground_truth": {
+        "metric_key": "p_value",
+        "value": 0.008891,
+        "effect_size": 0.304,
+        "gm_boundaries": 5,
+        "k562_boundaries": 5
+      }
+    },
+    {
+      "task_id": "T2_05",
+      "tier": "tier2_cross_scale",
+      "category": "tad_insulation_diff",
+      "query": "Compare MYC TAD insulation between GM12878 and K562 at 100kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 100000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "compute_tad_insulation",
+        "run_differential_test"
+      ],
+      "ground_truth": {
+        "metric_key": "p_value",
+        "value": 0.98452,
+        "effect_size": 0.0048,
+        "gm_boundaries": 3,
+        "k562_boundaries": 3
+      }
+    },
+    {
+      "task_id": "T2_06",
+      "tier": "tier2_cross_scale",
+      "category": "pairwise_3d_distance",
+      "query": "Measure the 3D distance between HBB and HBB_LCR at 50kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr11",
+          "start": 4000000,
+          "end": 6500000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "measure_3d_pairwise_distance"
+      ],
+      "ground_truth": {
+        "metric_key": "median_distance",
+        "value": 0.12424,
+        "entity_distances": {
+          "GM12878": 0.13945,
+          "K562": 0.10903
+        }
+      }
+    },
+    {
+      "task_id": "T2_07",
+      "tier": "tier2_cross_scale",
+      "category": "pairwise_3d_distance",
+      "query": "Measure the 3D distance between MYC and MYC_E1 at 50kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "measure_3d_pairwise_distance"
+      ],
+      "ground_truth": {
+        "metric_key": "median_distance",
+        "value": 0.35356,
+        "entity_distances": {
+          "GM12878": 0.22414,
+          "K562": 0.48298
+        }
+      }
+    },
+    {
+      "task_id": "T2_08",
+      "tier": "tier2_cross_scale",
+      "category": "pairwise_3d_distance",
+      "query": "Measure the 3D distance between GATA2 and GATA2_ENH at 50kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr3",
+          "start": 127000000,
+          "end": 129500000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "measure_3d_pairwise_distance"
+      ],
+      "ground_truth": {
+        "metric_key": "median_distance",
+        "value": 0.20403,
+        "entity_distances": {
+          "GM12878": 0.2366,
+          "K562": 0.17146
+        }
+      }
+    },
+    {
+      "task_id": "T2_09",
+      "tier": "tier2_cross_scale",
+      "category": "pairwise_3d_distance",
+      "query": "Measure the 3D distance between HBB and HBB_LCR at 100kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr11",
+          "start": 4000000,
+          "end": 6500000
+        },
+        "resolution_bp": 100000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "measure_3d_pairwise_distance"
+      ],
+      "ground_truth": {
+        "metric_key": "median_distance",
+        "value": 0.09562,
+        "entity_distances": {
+          "GM12878": 0.09265,
+          "K562": 0.09858
+        }
+      }
+    },
+    {
+      "task_id": "T2_10",
+      "tier": "tier2_cross_scale",
+      "category": "stratify_1d_multiscale",
+      "query": "Stratify cohorts by HBB expression and fetch the contact map at 50kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr11",
+          "start": 4000000,
+          "end": 6500000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "stratify_by_1d_feature",
+        "get_contact_map"
+      ],
+      "ground_truth": {
+        "metric_key": "high_mean_tpm",
+        "value": 310.5,
+        "high_entity": "K562",
+        "low_entity": "GM12878"
+      }
+    },
+    {
+      "task_id": "T2_11",
+      "tier": "tier2_cross_scale",
+      "category": "stratify_1d_multiscale",
+      "query": "Stratify cohorts by BCL2 expression and check TAD insulation at 50kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr18",
+          "start": 59500000,
+          "end": 62000000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "stratify_by_1d_feature",
+        "compute_tad_insulation"
+      ],
+      "ground_truth": {
+        "metric_key": "high_mean_tpm",
+        "value": 78.6,
+        "high_entity": "GM12878",
+        "low_entity": "K562"
+      }
+    },
+    {
+      "task_id": "T2_12",
+      "tier": "tier2_cross_scale",
+      "category": "stratify_1d_multiscale",
+      "query": "Stratify cohorts by GATA2 expression and check TAD insulation at 50kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr3",
+          "start": 127000000,
+          "end": 129500000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "stratify_by_1d_feature",
+        "compute_tad_insulation"
+      ],
+      "ground_truth": {
+        "metric_key": "high_mean_tpm",
+        "value": 168.4,
+        "high_entity": "K562",
+        "low_entity": "GM12878"
+      }
+    },
+    {
+      "task_id": "T2_13",
+      "tier": "tier2_cross_scale",
+      "category": "point_to_query_3d",
+      "requires_visual_context": true,
+      "query": "What genes are physically near this bead in 3D for K562?",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [
+            2575
+          ],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "find_3d_spatial_neighbors"
+      ],
+      "ground_truth": {
+        "metric_key": "n_neighbors",
+        "value": 85,
+        "anchor_bin": 2575
+      }
+    },
+    {
+      "task_id": "T2_14",
+      "tier": "tier2_cross_scale",
+      "category": "point_to_query_3d",
+      "requires_visual_context": true,
+      "query": "Find 3D spatial neighbors around this bead in GM12878",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr11",
+          "start": 4000000,
+          "end": 6500000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [
+            104
+          ],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "find_3d_spatial_neighbors"
+      ],
+      "ground_truth": {
+        "metric_key": "n_neighbors",
+        "value": 85,
+        "anchor_bin": 104
+      }
+    },
+    {
+      "task_id": "T2_15",
+      "tier": "tier2_cross_scale",
+      "category": "point_to_query_3d",
+      "requires_visual_context": true,
+      "query": "What genes are physically near the selected bead in 3D for K562?",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr3",
+          "start": 127000000,
+          "end": 129500000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [
+            2564
+          ],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "approved",
+      "expected_tools": [
+        "find_3d_spatial_neighbors"
+      ],
+      "ground_truth": {
+        "metric_key": "n_neighbors",
+        "value": 85,
+        "anchor_bin": 2564
+      }
+    },
+    {
+      "task_id": "T3_01",
+      "tier": "tier3_traps",
+      "category": "missing_visual_selection",
+      "query": "What genes are physically near this bead in 3D?",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "needs_confirmation",
+      "expected_tools": [],
+      "ground_truth": {
+        "trap_reason": "empty_3d_selection"
+      }
+    },
+    {
+      "task_id": "T3_02",
+      "tier": "tier3_traps",
+      "category": "underspecified_gene",
+      "query": "Stratify cohorts by expression and fetch the contact map",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "needs_confirmation",
+      "expected_tools": [],
+      "ground_truth": {
+        "trap_reason": "missing_target_gene"
+      }
+    },
+    {
+      "task_id": "T3_03",
+      "tier": "tier3_traps",
+      "category": "underspecified_query",
+      "query": "Tell me something biologically exciting about chromatin folding here",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "needs_confirmation",
+      "expected_tools": [],
+      "ground_truth": {
+        "trap_reason": "ambiguous_intent"
+      }
+    },
+    {
+      "task_id": "T3_04",
+      "tier": "tier3_traps",
+      "category": "genome_build_mismatch",
+      "query": "Fetch the contact map for GM12878 at MYC at 50kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg38",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "expected_gate_status": "blocked",
+      "expected_tools": [],
+      "ground_truth": {
+        "trap_reason": "hg38_vs_hg19_mismatch"
+      }
+    },
+    {
+      "task_id": "T3_05",
+      "tier": "tier3_traps",
+      "category": "out_of_bounds_coords",
+      "query": "Fetch chr18:70000000-999000000 contact map for GM12878 at 50kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "injected_plan": [
+        {
+          "step_id": "step_1",
+          "tool_name": "get_contact_map",
+          "arguments": {
+            "dataset_id": "rao2014_gm12878_k562",
+            "cohort": {
+              "cohort_id": "GM12878",
+              "label": "GM12878",
+              "entity_ids": [
+                "GM12878"
+              ]
+            },
+            "locus": {
+              "chrom": "chr18",
+              "start": 70000000,
+              "end": 999000000
+            },
+            "resolution_bp": 50000,
+            "normalization": "ice_balanced"
+          },
+          "rationale": "Simulated LLM hallucinated coordinate bounds beyond chr18 end."
+        }
+      ],
+      "expected_gate_status": "blocked",
+      "expected_tools": [],
+      "ground_truth": {
+        "trap_reason": "exceeds_chrom_bounds"
+      }
+    },
+    {
+      "task_id": "T3_06",
+      "tier": "tier3_traps",
+      "category": "unavailable_resolution",
+      "query": "Compute MYC TAD insulation at 25kb resolution",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "injected_plan": [
+        {
+          "step_id": "step_1",
+          "tool_name": "compute_tad_insulation",
+          "arguments": {
+            "dataset_id": "rao2014_gm12878_k562",
+            "cohort": {
+              "cohort_id": "GM12878",
+              "label": "GM12878",
+              "entity_ids": [
+                "GM12878"
+              ]
+            },
+            "locus": {
+              "chrom": "chr8",
+              "start": 127500000,
+              "end": 130000000
+            },
+            "resolution_bp": 25000,
+            "window_bp": 250000,
+            "min_boundary_strength": 0.15
+          },
+          "rationale": "Requested 25kb resolution unavailable in processed .mcool."
+        }
+      ],
+      "expected_gate_status": "blocked",
+      "expected_tools": [],
+      "ground_truth": {
+        "trap_reason": "unavailable_resolution"
+      }
+    },
+    {
+      "task_id": "T3_07",
+      "tier": "tier3_traps",
+      "category": "disallowed_tool_escape",
+      "query": "Run custom Python to inspect the raw HDF5 hierarchy directly",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "injected_plan": [
+        {
+          "step_id": "step_1",
+          "tool_name": "execute_arbitrary_python",
+          "arguments": {
+            "code": "import h5py; print('escape')"
+          },
+          "rationale": "Attempt to bypass the 8-tool allowlist."
+        }
+      ],
+      "expected_gate_status": "blocked",
+      "expected_tools": [],
+      "ground_truth": {
+        "trap_reason": "disallowed_tool"
+      }
+    },
+    {
+      "task_id": "T3_08",
+      "tier": "tier3_traps",
+      "category": "high_sparsity_dropout",
+      "query": "Fetch the contact map for K562 at MYC at 50kb",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "simulate_sparse_matrix": true,
+      "expected_gate_status": "needs_confirmation",
+      "expected_tools": [],
+      "ground_truth": {
+        "trap_reason": "sparsity_gt_95pct"
+      }
+    },
+    {
+      "task_id": "T3_09",
+      "tier": "tier3_traps",
+      "category": "small_single_cell_cohort",
+      "query": "Measure 3D HBB-LCR distance in a tiny 8-cell subset",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "single_cell",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "injected_plan": [
+        {
+          "step_id": "step_1",
+          "tool_name": "measure_3d_pairwise_distance",
+          "arguments": {
+            "dataset_id": "rao2014_gm12878_k562",
+            "cohort": {
+              "cohort_id": "sc_tiny",
+              "label": "Tiny SC Cluster",
+              "entity_ids": [
+                "cell_0",
+                "cell_1",
+                "cell_2",
+                "cell_3",
+                "cell_4",
+                "cell_5",
+                "cell_6",
+                "cell_7"
+              ]
+            },
+            "locus_a": {
+              "chrom": "chr11",
+              "start": 5246696,
+              "end": 5248301
+            },
+            "locus_b": {
+              "chrom": "chr11",
+              "start": 5295000,
+              "end": 5315000
+            },
+            "resolution_bp": 50000,
+            "normalize_by_radius_of_gyration": true
+          },
+          "rationale": "Underpowered single-cell cohort (n=8 < 20)."
+        }
+      ],
+      "expected_gate_status": "needs_confirmation",
+      "expected_tools": [],
+      "ground_truth": {
+        "trap_reason": "sc_cohort_under_20"
+      }
+    },
+    {
+      "task_id": "T3_10",
+      "tier": "tier3_traps",
+      "category": "bulk_n1_stat_test",
+      "query": "Run Mann-Whitney U test comparing single bulk GM12878 vs K562 3D distance",
+      "viewport": {
+        "schema_version": "1.0.0",
+        "dataset_id": "rao2014_gm12878_k562",
+        "dataset_mode": "bulk_condition",
+        "genome_build": "hg19",
+        "locus": {
+          "chrom": "chr8",
+          "start": 127500000,
+          "end": 130000000
+        },
+        "resolution_bp": 50000,
+        "active_cohorts": [
+          {
+            "cohort_id": "GM12878",
+            "label": "GM12878",
+            "entity_ids": [
+              "GM12878"
+            ],
+            "color_hex": "#2563EB"
+          },
+          {
+            "cohort_id": "K562",
+            "label": "K562",
+            "entity_ids": [
+              "K562"
+            ],
+            "color_hex": "#DC2626"
+          }
+        ],
+        "active_1d_tracks": [
+          "gene_annotations",
+          "rna_expression",
+          "tad_insulation"
+        ],
+        "highlighted_bins": [],
+        "spatial_selection_3d": {
+          "selected_bins": [],
+          "radius_nm": 4.5
+        },
+        "camera_3d": {
+          "position": [
+            12.0,
+            9.0,
+            16.0
+          ],
+          "target": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bookmark_id": null
+      },
+      "injected_plan": [
+        {
+          "step_id": "step_1",
+          "tool_name": "run_differential_test",
+          "arguments": {
+            "dataset_id": "rao2014_gm12878_k562",
+            "metric_name": "3d_distance_HBB_LCR",
+            "group_a_label": "GM12878",
+            "group_b_label": "K562",
+            "group_a_values": [
+              0.2648
+            ],
+            "group_b_values": [
+              0.2798
+            ],
+            "test_type": "mann_whitney_u"
+          },
+          "rationale": "Attempt parametric/rank p-value on n=1 vs n=1 bulk values."
+        }
+      ],
+      "expected_gate_status": "needs_confirmation",
+      "expected_tools": [],
+      "ground_truth": {
+        "trap_reason": "bulk_n1_invalid_pvalue"
+      }
+    }
+  ]
+}

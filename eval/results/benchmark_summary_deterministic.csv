@@ -1,0 +1,3 @@
+system,n_tasks,exec_success_pct,t1_t2_accuracy_pct,t3_trap_catch_pct,overall_accuracy_pct,unsupported_claim_pct,mean_latency_ms
+full_chromcopilot,35,100.0,100.0,100.0,100.0,0.0,206.6
+ablation_no_gate_no_visual,35,77.1,88.0,30.0,71.4,5.7,105.1

@@ -1,0 +1,56 @@
+[
+  {
+    "metric": "time_sec",
+    "n_paired": 1,
+    "standard_mean": 395.0,
+    "copilot_mean": 142.0,
+    "mean_delta": -253.0,
+    "cohens_dz": null,
+    "wilcoxon_p": null
+  },
+  {
+    "metric": "accuracy_score",
+    "n_paired": 1,
+    "standard_mean": 2.0,
+    "copilot_mean": 3.0,
+    "mean_delta": 1.0,
+    "cohens_dz": null,
+    "wilcoxon_p": null
+  },
+  {
+    "metric": "trust_calibrated",
+    "n_paired": 1,
+    "standard_mean": 0.0,
+    "copilot_mean": 1.0,
+    "mean_delta": 1.0,
+    "cohens_dz": null,
+    "wilcoxon_p": null
+  },
+  {
+    "metric": "nasa_tlx_raw",
+    "n_paired": 1,
+    "standard_mean": 55.83,
+    "copilot_mean": 22.5,
+    "mean_delta": -33.33,
+    "cohens_dz": null,
+    "wilcoxon_p": null
+  },
+  {
+    "metric": "tlx_mental",
+    "n_paired": 1,
+    "standard_mean": 75.0,
+    "copilot_mean": 35.0,
+    "mean_delta": -40.0,
+    "cohens_dz": null,
+    "wilcoxon_p": null
+  },
+  {
+    "metric": "tlx_frustration",
+    "n_paired": 1,
+    "standard_mean": 65.0,
+    "copilot_mean": 20.0,
+    "mean_delta": -45.0,
+    "cohens_dz": null,
+    "wilcoxon_p": null
+  }
+]

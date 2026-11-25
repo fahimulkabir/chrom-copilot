@@ -1,0 +1,92 @@
+{
+  "tools": [
+    {
+      "tool": "stratify_by_1d_feature",
+      "modality": "1D",
+      "mean_ms": 0.59,
+      "p95_ms": 0.79
+    },
+    {
+      "tool": "get_contact_map (50kb)",
+      "modality": "2D",
+      "mean_ms": 12.75,
+      "p95_ms": 12.94
+    },
+    {
+      "tool": "compute_tad_insulation (50kb)",
+      "modality": "2D",
+      "mean_ms": 377.26,
+      "p95_ms": 378.81
+    },
+    {
+      "tool": "compute_ab_compartments (250kb, cached)",
+      "modality": "2D",
+      "mean_ms": 6.04,
+      "p95_ms": 6.38
+    },
+    {
+      "tool": "measure_3d_pairwise_distance (50kb)",
+      "modality": "3D",
+      "mean_ms": 3.32,
+      "p95_ms": 3.85
+    },
+    {
+      "tool": "find_3d_spatial_neighbors (50kb)",
+      "modality": "3D",
+      "mean_ms": 46.57,
+      "p95_ms": 48.94
+    },
+    {
+      "tool": "run_differential_test (MWU, n=50)",
+      "modality": "Stats",
+      "mean_ms": 0.45,
+      "p95_ms": 0.57
+    },
+    {
+      "tool": "emit_viewport_sync",
+      "modality": "Sync",
+      "mean_ms": 2.96,
+      "p95_ms": 3.27
+    }
+  ],
+  "stages": [
+    {
+      "stage": "1. Plan (Deterministic)",
+      "mean_ms": 0.01
+    },
+    {
+      "stage": "2. Pre-Execution Verify Gate",
+      "mean_ms": 11.27
+    },
+    {
+      "stage": "3. Deterministic Tool Compute (TAD x2 + MWU)",
+      "mean_ms": 754.97
+    },
+    {
+      "stage": "4. Provenance Binder",
+      "mean_ms": 0.01
+    }
+  ],
+  "scalability": [
+    {
+      "n_cells": 100,
+      "mean_ms": 0.45,
+      "p95_ms": 0.57
+    },
+    {
+      "n_cells": 500,
+      "mean_ms": 0.91,
+      "p95_ms": 1.44
+    },
+    {
+      "n_cells": 1000,
+      "mean_ms": 0.93,
+      "p95_ms": 1.1
+    },
+    {
+      "n_cells": 2000,
+      "mean_ms": 1.61,
+      "p95_ms": 1.76
+    }
+  ]
+}

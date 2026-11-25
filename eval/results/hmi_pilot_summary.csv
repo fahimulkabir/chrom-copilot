@@ -1,0 +1,7 @@
+metric,n_paired,standard_mean,copilot_mean,mean_delta,cohens_dz,wilcoxon_p
+time_sec,1,395.0,142.0,-253.0,,
+accuracy_score,1,2.0,3.0,1.0,,
+trust_calibrated,1,0.0,1.0,1.0,,
+nasa_tlx_raw,1,55.83,22.5,-33.33,,
+tlx_mental,1,75.0,35.0,-40.0,,
+tlx_frustration,1,65.0,20.0,-45.0,,

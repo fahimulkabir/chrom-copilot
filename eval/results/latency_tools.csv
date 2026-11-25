@@ -1,0 +1,9 @@
+tool,modality,mean_ms,p95_ms
+stratify_by_1d_feature,1D,0.59,0.79
+get_contact_map (50kb),2D,12.75,12.94
+compute_tad_insulation (50kb),2D,377.26,378.81
+"compute_ab_compartments (250kb, cached)",2D,6.04,6.38
+measure_3d_pairwise_distance (50kb),3D,3.32,3.85
+find_3d_spatial_neighbors (50kb),3D,46.57,48.94
+"run_differential_test (MWU, n=50)",Stats,0.45,0.57
+emit_viewport_sync,Sync,2.96,3.27
