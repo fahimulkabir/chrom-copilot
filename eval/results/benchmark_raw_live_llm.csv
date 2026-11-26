@@ -1,0 +1,106 @@
+task_id,tier,system,execution_success,answer_accurate,trap_caught,unsupported_claim_rate,latency_ms,notes
+T1_01,tier1_single_scale,full_chromcopilot,True,True,,0.0,253676.58,"mode=gemini_llm; obs=2728406.0, gt=2728406.0"
+T1_01,tier1_single_scale,ablation_no_gate_no_visual,True,True,,0.0,34706.46,"obs=2728406.0, gt=2728406.0"
+T1_01,tier1_single_scale,unconstrained_code_agent,True,False,,1.0,6471.57,"obs=4307214.0, gt=2728406.0"
+T1_02,tier1_single_scale,full_chromcopilot,True,True,,0.0,17763.81,"mode=gemini_llm; obs=552204.0, gt=552204.0"
+T1_02,tier1_single_scale,ablation_no_gate_no_visual,True,True,,0.0,196535.26,"obs=552204.0, gt=552204.0"
+T1_02,tier1_single_scale,unconstrained_code_agent,True,False,,1.0,22536.79,"obs=41.05472906047959, gt=552204.0"
+T1_03,tier1_single_scale,full_chromcopilot,True,True,,0.0,41997.27,"mode=gemini_llm; obs=537459.0, gt=537459.0"
+T1_03,tier1_single_scale,ablation_no_gate_no_visual,True,True,,0.0,93742.23,"obs=537459.0, gt=537459.0"
+T1_03,tier1_single_scale,unconstrained_code_agent,True,False,,1.0,16805.43,"obs=852429.0, gt=537459.0"
+T1_04,tier1_single_scale,full_chromcopilot,True,True,,0.0,39787.53,"mode=gemini_llm; obs=2548989.0, gt=2548989.0"
+T1_04,tier1_single_scale,ablation_no_gate_no_visual,True,True,,0.0,43071.34,"obs=2548989.0, gt=2548989.0"
+T1_04,tier1_single_scale,unconstrained_code_agent,True,False,,1.0,6833.15,"obs=24.737279576388715, gt=2548989.0"
+T1_05,tier1_single_scale,full_chromcopilot,True,True,,0.0,9694.93,"mode=gemini_llm; obs=534444.0, gt=534444.0"
+T1_05,tier1_single_scale,ablation_no_gate_no_visual,True,True,,0.0,93132.22,"obs=534444.0, gt=534444.0"
+T1_05,tier1_single_scale,unconstrained_code_agent,True,False,,1.0,71986.82,"obs=830145.0, gt=534444.0"
+T1_06,tier1_single_scale,full_chromcopilot,True,True,,0.0,65939.93,"mode=gemini_llm; obs=50, gt=50"
+T1_06,tier1_single_scale,ablation_no_gate_no_visual,True,True,,0.0,142666.86,"obs=50, gt=50"
+T1_06,tier1_single_scale,unconstrained_code_agent,False,False,,1.0,5017.13,code_exit=1
+T1_07,tier1_single_scale,full_chromcopilot,True,True,,0.0,43827.16,"mode=gemini_llm; obs=57, gt=57"
+T1_07,tier1_single_scale,ablation_no_gate_no_visual,True,True,,0.0,198593.19,"obs=57, gt=57"
+T1_07,tier1_single_scale,unconstrained_code_agent,False,False,,1.0,140291.7,error=ServerError
+T1_08,tier1_single_scale,full_chromcopilot,True,True,,0.0,16273.64,"mode=gemini_llm; obs=92, gt=92"
+T1_08,tier1_single_scale,ablation_no_gate_no_visual,True,True,,0.0,48348.25,"obs=92, gt=92"
+T1_08,tier1_single_scale,unconstrained_code_agent,False,False,,1.0,9938.07,code_exit=1
+T1_09,tier1_single_scale,full_chromcopilot,True,True,,0.0,14954.0,"mode=gemini_llm; obs=64, gt=64"
+T1_09,tier1_single_scale,ablation_no_gate_no_visual,True,True,,0.0,159517.93,"obs=64, gt=64"
+T1_09,tier1_single_scale,unconstrained_code_agent,True,False,,1.0,13726.19,"obs=None, gt=64"
+T1_10,tier1_single_scale,full_chromcopilot,True,True,,0.0,66216.25,"mode=gemini_llm; obs=131, gt=131"
+T1_10,tier1_single_scale,ablation_no_gate_no_visual,True,True,,0.0,9869.24,"obs=131, gt=131"
+T1_10,tier1_single_scale,unconstrained_code_agent,False,False,,1.0,80138.79,code_exit=1
+T2_01,tier2_cross_scale,full_chromcopilot,True,True,,0.0,134429.84,"mode=deterministic_fallback; obs=0.392642, gt=0.392642"
+T2_01,tier2_cross_scale,ablation_no_gate_no_visual,True,True,,0.0,9339.2,"obs=0.392642, gt=0.392642"
+T2_01,tier2_cross_scale,unconstrained_code_agent,True,False,,1.0,40801.89,"obs=0.9085978224870299, gt=0.392642"
+T2_02,tier2_cross_scale,full_chromcopilot,True,True,,0.0,140902.08,"mode=deterministic_fallback; obs=0.218492, gt=0.218492"
+T2_02,tier2_cross_scale,ablation_no_gate_no_visual,True,True,,0.0,5874.3,"obs=0.218492, gt=0.218492"
+T2_02,tier2_cross_scale,unconstrained_code_agent,True,False,,1.0,24108.37,"obs=0.002067750145749935, gt=0.218492"
+T2_03,tier2_cross_scale,full_chromcopilot,True,True,,0.0,22944.26,"mode=gemini_llm; obs=0.014256, gt=0.014256"
+T2_03,tier2_cross_scale,ablation_no_gate_no_visual,True,True,,0.0,138029.65,"obs=0.014256, gt=0.014256"
+T2_03,tier2_cross_scale,unconstrained_code_agent,True,False,,1.0,43197.49,"obs=None, gt=0.014256"
+T2_04,tier2_cross_scale,full_chromcopilot,True,True,,0.0,257172.98,"mode=deterministic_fallback; obs=0.008891, gt=0.008891"
+T2_04,tier2_cross_scale,ablation_no_gate_no_visual,True,True,,0.0,85744.3,"obs=0.008891, gt=0.008891"
+T2_04,tier2_cross_scale,unconstrained_code_agent,True,False,,1.0,12840.56,"obs=0.00029134895842265193, gt=0.008891"
+T2_05,tier2_cross_scale,full_chromcopilot,True,True,,0.0,262847.96,"mode=deterministic_fallback; obs=0.98452, gt=0.98452"
+T2_05,tier2_cross_scale,ablation_no_gate_no_visual,True,True,,0.0,69870.98,"obs=0.98452, gt=0.98452"
+T2_05,tier2_cross_scale,unconstrained_code_agent,True,False,,1.0,7246.24,"obs=0.8461535661468554, gt=0.98452"
+T2_06,tier2_cross_scale,full_chromcopilot,True,True,,0.0,25025.13,"mode=gemini_llm; obs=0.12424, gt=0.12424"
+T2_06,tier2_cross_scale,ablation_no_gate_no_visual,True,True,,0.0,5633.0,"obs=0.12424, gt=0.12424"
+T2_06,tier2_cross_scale,unconstrained_code_agent,True,False,,1.0,40733.81,"obs=0.13864265763048614, gt=0.12424"
+T2_07,tier2_cross_scale,full_chromcopilot,True,True,,0.0,134685.12,"mode=gemini_llm; obs=0.35356, gt=0.35356"
+T2_07,tier2_cross_scale,ablation_no_gate_no_visual,True,True,,0.0,139529.67,"obs=0.35356, gt=0.35356"
+T2_07,tier2_cross_scale,unconstrained_code_agent,True,False,,1.0,27405.49,"obs=None, gt=0.35356"
+T2_08,tier2_cross_scale,full_chromcopilot,True,True,,0.0,36728.43,"mode=gemini_llm; obs=0.20403, gt=0.20403"
+T2_08,tier2_cross_scale,ablation_no_gate_no_visual,True,True,,0.0,38791.87,"obs=0.20403, gt=0.20403"
+T2_08,tier2_cross_scale,unconstrained_code_agent,False,False,,1.0,149239.68,error=ServerError
+T2_09,tier2_cross_scale,full_chromcopilot,True,True,,0.0,133722.91,"mode=deterministic_fallback; obs=0.09562, gt=0.09562"
+T2_09,tier2_cross_scale,ablation_no_gate_no_visual,True,True,,0.0,18169.08,"obs=0.09562, gt=0.09562"
+T2_09,tier2_cross_scale,unconstrained_code_agent,True,False,,1.0,10987.98,"obs=None, gt=0.09562"
+T2_10,tier2_cross_scale,full_chromcopilot,True,True,,0.0,6594.7,"mode=gemini_llm; obs=310.5, gt=310.5"
+T2_10,tier2_cross_scale,ablation_no_gate_no_visual,False,False,,0.0,20229.81,runtime_crash=ValueError
+T2_10,tier2_cross_scale,unconstrained_code_agent,False,False,,1.0,15060.32,code_exit=1
+T2_11,tier2_cross_scale,full_chromcopilot,True,True,,0.0,130078.11,"mode=deterministic_fallback; obs=78.6, gt=78.6"
+T2_11,tier2_cross_scale,ablation_no_gate_no_visual,True,True,,0.0,83426.3,"obs=78.6, gt=78.6"
+T2_11,tier2_cross_scale,unconstrained_code_agent,True,False,,1.0,5523.38,"obs=None, gt=78.6"
+T2_12,tier2_cross_scale,full_chromcopilot,True,True,,0.0,43042.85,"mode=gemini_llm; obs=168.4, gt=168.4"
+T2_12,tier2_cross_scale,ablation_no_gate_no_visual,True,True,,0.0,9168.97,"obs=168.4, gt=168.4"
+T2_12,tier2_cross_scale,unconstrained_code_agent,True,False,,1.0,5121.69,"obs=None, gt=168.4"
+T2_13,tier2_cross_scale,full_chromcopilot,True,True,,0.0,17338.79,"mode=gemini_llm; obs=85, gt=85"
+T2_13,tier2_cross_scale,ablation_no_gate_no_visual,False,False,,0.0,3398.7,empty_plan_without_visual_context_or_gate
+T2_13,tier2_cross_scale,unconstrained_code_agent,True,False,,1.0,22914.79,"obs=None, gt=85"
+T2_14,tier2_cross_scale,full_chromcopilot,True,True,,0.0,6748.34,"mode=gemini_llm; obs=85, gt=85"
+T2_14,tier2_cross_scale,ablation_no_gate_no_visual,False,False,,0.0,3597.28,empty_plan_without_visual_context_or_gate
+T2_14,tier2_cross_scale,unconstrained_code_agent,False,False,,1.0,8037.54,code_exit=1
+T2_15,tier2_cross_scale,full_chromcopilot,True,True,,0.0,6246.94,"mode=gemini_llm; obs=85, gt=85"
+T2_15,tier2_cross_scale,ablation_no_gate_no_visual,False,False,,0.0,3485.64,empty_plan_without_visual_context_or_gate
+T2_15,tier2_cross_scale,unconstrained_code_agent,True,False,,1.0,8867.56,"obs=None, gt=85"
+T3_01,tier3_traps,full_chromcopilot,True,True,True,0.0,9310.38,mode=gemini_llm; gate=needs_confirmation (expected=needs_confirmation)
+T3_01,tier3_traps,ablation_no_gate_no_visual,True,True,True,0.0,4381.45,empty_plan_without_visual_context_or_gate
+T3_01,tier3_traps,unconstrained_code_agent,True,True,True,0.0,6541.41,refused=True
+T3_02,tier3_traps,full_chromcopilot,True,True,True,0.0,27975.61,mode=gemini_llm; gate=needs_confirmation (expected=needs_confirmation)
+T3_02,tier3_traps,ablation_no_gate_no_visual,True,True,True,0.0,4532.75,empty_plan_without_visual_context_or_gate
+T3_02,tier3_traps,unconstrained_code_agent,True,True,True,0.0,15699.42,refused=True
+T3_03,tier3_traps,full_chromcopilot,True,True,True,0.0,2570.26,mode=gemini_llm; gate=needs_confirmation (expected=needs_confirmation)
+T3_03,tier3_traps,ablation_no_gate_no_visual,True,True,True,0.0,4619.53,empty_plan_without_visual_context_or_gate
+T3_03,tier3_traps,unconstrained_code_agent,True,False,False,1.0,7277.47,refused=False
+T3_04,tier3_traps,full_chromcopilot,True,True,True,0.0,2381.17,mode=gemini_llm; gate=blocked (expected=blocked)
+T3_04,tier3_traps,ablation_no_gate_no_visual,True,False,False,1.0,4528.96,SILENT_TRAP_FAILURE: executed without verification gate
+T3_04,tier3_traps,unconstrained_code_agent,True,True,True,0.0,5910.6,refused=True
+T3_05,tier3_traps,full_chromcopilot,True,True,True,0.0,0.16,mode=injected_trap; gate=blocked (expected=blocked)
+T3_05,tier3_traps,ablation_no_gate_no_visual,False,False,False,0.0,1.36,runtime_crash=ValueError
+T3_05,tier3_traps,unconstrained_code_agent,True,True,True,0.0,16192.15,refused=True
+T3_06,tier3_traps,full_chromcopilot,True,True,True,0.0,0.15,mode=injected_trap; gate=blocked (expected=blocked)
+T3_06,tier3_traps,ablation_no_gate_no_visual,False,False,False,0.0,0.1,runtime_crash=ValueError
+T3_06,tier3_traps,unconstrained_code_agent,True,True,True,0.0,14364.56,refused=True
+T3_07,tier3_traps,full_chromcopilot,True,True,True,0.0,0.1,mode=injected_trap; gate=blocked (expected=blocked)
+T3_07,tier3_traps,ablation_no_gate_no_visual,False,False,False,0.0,0.02,runtime_crash=RuntimeError
+T3_07,tier3_traps,unconstrained_code_agent,True,False,False,1.0,2447.63,refused=False
+T3_08,tier3_traps,full_chromcopilot,True,True,True,0.0,4485.76,mode=gemini_llm; gate=needs_confirmation (expected=needs_confirmation)
+T3_08,tier3_traps,ablation_no_gate_no_visual,False,False,False,0.0,4367.25,runtime_crash=KeyError
+T3_08,tier3_traps,unconstrained_code_agent,True,False,False,1.0,15191.13,refused=False
+T3_09,tier3_traps,full_chromcopilot,True,True,True,0.0,0.19,mode=injected_trap; gate=needs_confirmation (expected=needs_confirmation)
+T3_09,tier3_traps,ablation_no_gate_no_visual,False,False,False,0.0,8.81,runtime_crash=ValueError
+T3_09,tier3_traps,unconstrained_code_agent,True,True,True,0.0,5410.88,refused=True
+T3_10,tier3_traps,full_chromcopilot,True,True,True,0.0,0.19,mode=injected_trap; gate=needs_confirmation (expected=needs_confirmation)
+T3_10,tier3_traps,ablation_no_gate_no_visual,True,False,False,1.0,0.73,SILENT_TRAP_FAILURE: executed without verification gate
+T3_10,tier3_traps,unconstrained_code_agent,True,True,True,0.0,5308.47,refused=True

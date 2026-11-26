@@ -10,6 +10,7 @@ from pydantic import BaseModel, Field
 
 from app.config import get_settings
 from app.schemas.agent import CopilotResponse, ProvenanceClaim, ProvenanceRecord
+from app.agent.llm_utils import generate_with_retry
 
 NUMERIC_TOKEN_RE = re.compile(r"\b\d+(?:\.\d+)?\b")
 
@@ -221,8 +222,7 @@ def _synthesize_with_gemini(
         f"DETERMINISTIC TOOL OUTPUTS:\n{json.dumps(compact_outputs, indent=2)}"
     )
 
-    resp = client.models.generate_content(
-        model="gemini-2.5-flash",
+    resp = generate_with_retry(
         contents=user_content,
         config=types.GenerateContentConfig(
             system_instruction=system_prompt,

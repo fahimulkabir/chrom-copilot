@@ -35,6 +35,7 @@ from app.config import get_settings
 from app.engine.data_store import DataStore, get_data_store
 from app.schemas.agent import PlannedToolCall
 from app.schemas.viewport import ViewportState
+from app.agent.llm_utils import generate_with_retry
 
 
 def _extract_answer_from_outputs(task: dict[str, Any], outputs: list[dict[str, Any]]) -> Any:
@@ -93,14 +94,14 @@ def eval_full_chromcopilot(
         if "injected_plan" in task:
             plan = [PlannedToolCall.model_validate(s) for s in task["injected_plan"]]
             ver = verify_plan(store, plan, vp)
-            return ver
+            return ver, "injected_trap"  # <-- UPDATED
         plan_graph = build_plan_graph(store)
         res = plan_graph.invoke(
             {"user_query": task["query"], "viewport": vp, "use_llm": use_llm}
         )
-        return res["verification"]
+        return res["verification"], res["planner_mode"]  # <-- UPDATED
 
-    ver = _run_with_optional_sparse_sim(
+    ver, planner_mode = _run_with_optional_sparse_sim(  # <-- UPDATED
         store, bool(task.get("simulate_sparse_matrix")), _plan_and_verify
     )
 
@@ -115,7 +116,7 @@ def eval_full_chromcopilot(
             "trap_caught": caught,
             "unsupported_claim_rate": 0.0,
             "latency_ms": round((time.perf_counter() - t0) * 1000.0, 2),
-            "notes": f"gate={ver.status} (expected={task['expected_gate_status']})",
+            "notes": f"mode={planner_mode}; gate={ver.status} (expected={task['expected_gate_status']})",  # <-- UPDATED
         }
 
     # Tier 1 / Tier 2 execution
@@ -129,7 +130,7 @@ def eval_full_chromcopilot(
             "trap_caught": None,
             "unsupported_claim_rate": 0.0,
             "latency_ms": round((time.perf_counter() - t0) * 1000.0, 2),
-            "notes": f"unexpected gate={ver.status}",
+            "notes": f"mode={planner_mode}; unexpected gate={ver.status}",  # <-- UPDATED
         }
 
     exec_graph = build_execute_graph(store, ledger)
@@ -159,7 +160,7 @@ def eval_full_chromcopilot(
             "trap_caught": None,
             "unsupported_claim_rate": round(unverified / n_claims, 4) if n_claims else 0.0,
             "latency_ms": round((time.perf_counter() - t0) * 1000.0, 2),
-            "notes": f"obs={obs}, gt={task['ground_truth']['value']}",
+            "notes": f"mode={planner_mode}; obs={obs}, gt={task['ground_truth']['value']}",  # <-- UPDATED
         }
     except Exception as exc:
         return {
@@ -171,9 +172,8 @@ def eval_full_chromcopilot(
             "trap_caught": None,
             "unsupported_claim_rate": 0.0,
             "latency_ms": round((time.perf_counter() - t0) * 1000.0, 2),
-            "notes": f"error={exc}",
+            "notes": f"mode={planner_mode}; error={exc}",  # <-- UPDATED
         }
-
 
 def eval_ablation_no_gate_no_visual(
     store: DataStore, task: dict[str, Any], use_llm: bool
@@ -279,23 +279,35 @@ def eval_unconstrained_code_agent(task: dict[str, Any]) -> dict[str, Any]:
     client = genai.Client(api_key=get_settings().gemini_api_key)
     data_dir = str((REPO_ROOT / "data" / "processed").resolve())
 
+    metric_hint = task.get("ground_truth", {}).get("metric_key")
+    metric_instruction = (
+        f"Put the single numeric answer for '{metric_hint}' in the JSON 'value' field."
+        if metric_hint
+        else "If the query is invalid/ambiguous/mismatched, set refused=true and value=null."
+    )
+
     prompt = (
         f"You are a bioinformatics coder with access to processed Hi-C data in '{data_dir}'.\n"
         f"Files: metadata.json, contacts/GM12878.mcool, contacts/K562.mcool, "
-        f"structures_3d/rao2014_gm12878_k562_3d.parquet, tracks_1d/genes_hg19.parquet.\n"
+        f"structures_3d/rao2014_gm12878_k562_3d.parquet, tracks_1d/genes_hg19.parquet, "
+        f"tracks_1d/bin_signals_hg19.parquet.\n"
         f"User Query: {task['query']}\n"
-        f"Viewport genome_build={task['viewport']['genome_build']}, "
-        f"dataset_mode={task['viewport']['dataset_mode']}.\n"
-        f"Write a standalone Python script that prints ONLY a single JSON object to stdout:\n"
+        f"Viewport Context: locus={task['viewport']['locus']}, "
+        f"resolution_bp={task['viewport']['resolution_bp']}, "
+        f"genome_build={task['viewport']['genome_build']}, "
+        f"dataset_mode={task['viewport']['dataset_mode']}, "
+        f"selected_3d_bins={task['viewport']['spatial_selection_3d']['selected_bins']}.\n"
+        f"{metric_instruction}\n"
+        f"Write a standalone Python script that prints ONLY a single JSON object as its last line:\n"
         f'{{"refused": bool, "reason": str, "value": float_or_null, "summary": str}}\n'
-        f"Set refused=true if the query is ambiguous, mismatched, out-of-bounds, or statistically invalid.\n"
+        f"Set refused=true if the query is ambiguous, has a genome build mismatch vs metadata.json, "
+        f"is out-of-bounds, requests an unavailable resolution, lacks a selected 3D bead, or is statistically invalid.\n"
         f"Return ONLY raw Python code inside ```python ... ``` fences."
     )
     try:
-        resp = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt,
-            config=types.GenerateContentConfig(temperature=0.0),
+        resp = generate_with_retry(
+        contents=prompt,
+        config=types.GenerateContentConfig(temperature=0.0),
         )
         m = re.search(r"```(?:python)?\s*(.*?)```", resp.text or "", flags=re.DOTALL)
         code = m.group(1).strip() if m else (resp.text or "").strip()
@@ -414,7 +426,8 @@ def main() -> None:
         print("Warning: --use-llm requested, but GEMINI_API_KEY is not set in .env. Running offline mode.")
 
     rows: list[dict[str, Any]] = []
-    for task in tasks:
+    for i, task in enumerate(tasks, start=1):
+        print(f"[{i}/{len(tasks)}] {task['task_id']} ({task['category']})...", flush=True)
         rows.append(eval_full_chromcopilot(store, task, use_llm=live_llm))
         rows.append(eval_ablation_no_gate_no_visual(store, task, use_llm=live_llm))
         if live_llm:

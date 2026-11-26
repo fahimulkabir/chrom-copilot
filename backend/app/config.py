@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     default_dataset_id: str = "rao2014_gm12878_k562"
     llm_provider: str = "gemini"
     gemini_api_key: str = ""
+    gemini_model: str = "gemini-3.8-flash"
 
     model_config = SettingsConfigDict(
         env_file=str(REPO_ROOT / ".env"),

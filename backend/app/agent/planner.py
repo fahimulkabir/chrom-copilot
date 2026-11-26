@@ -12,6 +12,7 @@ from app.config import get_settings
 from app.engine.data_store import DataStore
 from app.schemas.agent import PlannedToolCall
 from app.schemas.viewport import ViewportState
+from app.agent.llm_utils import generate_with_retry
 
 
 class _LLMPlanEnvelope(BaseModel):
@@ -22,6 +23,31 @@ class _LLMPlanEnvelope(BaseModel):
 def _has_live_gemini_key() -> bool:
     key = get_settings().gemini_api_key.strip()
     return bool(key) and key != "your_api_key_here"
+
+
+TOOL_SCHEMA_SPEC = """
+EXACT ARGUMENT SCHEMAS FOR THE 8 PERMITTED TOOLS:
+- CohortSpec object: {"cohort_id": str, "label": str, "entity_ids": [str], "color_hex": str}
+  (For comparing both cell lines in one cohort, use entity_ids: ["GM12878", "K562"]).
+- GenomicInterval object: {"chrom": str, "start": int, "end": int}
+
+1. stratify_by_1d_feature:
+   {"dataset_id": str, "feature_name": str, "source_cohort": CohortSpec, "split_method": "condition_group"|"quantile"|"threshold"}
+2. get_contact_map:
+   {"dataset_id": str, "cohort": CohortSpec (or "$step_1.high_cohort"), "locus": GenomicInterval, "resolution_bp": 50000|100000|250000, "normalization": "ice_balanced"|"obs_over_exp"|"raw"}
+3. compute_tad_insulation:
+   {"dataset_id": str, "cohort": CohortSpec (or "$step_1.high_cohort"), "locus": GenomicInterval, "resolution_bp": 50000|100000, "window_bp": int (max(250000, resolution_bp*5)), "min_boundary_strength": 0.15}
+4. compute_ab_compartments:
+   {"dataset_id": str, "cohort": CohortSpec, "compare_cohort": CohortSpec|null, "chrom": str, "resolution_bp": 100000|250000}
+5. measure_3d_pairwise_distance:
+   {"dataset_id": str, "cohort": CohortSpec (entity_ids=["GM12878","K562"] when comparing both), "locus_a": GenomicInterval, "locus_b": GenomicInterval, "resolution_bp": 50000|100000|250000, "normalize_by_radius_of_gyration": true}
+6. find_3d_spatial_neighbors:
+   {"dataset_id": str, "cohort": CohortSpec, "anchor_chrom": str, "anchor_bin_index": int (from viewport.spatial_selection_3d.selected_bins[0]), "resolution_bp": 50000|100000|250000, "radius_threshold": 4.5, "min_linear_separation_bins": 3}
+7. run_differential_test:
+   {"dataset_id": str, "metric_name": str, "group_a_label": str, "group_b_label": str, "group_a_values": [float]|"$step_1.insulation_scores", "group_b_values": [float]|"$step_2.insulation_scores", "test_type": "mann_whitney_u"|"welch_t"|"permutation"|"delta_only"}
+8. emit_viewport_sync:
+   {"dataset_id": str, "locus": GenomicInterval, "resolution_bp": 50000|100000|250000, "active_cohorts": [CohortSpec], "highlighted_bins": [{"chrom": str, "bin_index": int, "label": str, "role": "promoter"|"enhancer"|"anchor"}], "camera_focus_bin": int|null}
+"""
 
 
 def _build_planner_system_prompt(store: DataStore) -> str:
@@ -47,44 +73,48 @@ def _build_planner_system_prompt(store: DataStore) -> str:
     return (
         "You are ChromCopilot's Multi-Scale Bioinformatics Planner.\n"
         "Convert the user's question and live ViewportState JSON into a deterministic DAG of tool calls.\n"
+        "Return ONLY a JSON object with this exact top-level shape:\n"
+        '{"plan": [{"step_id": "step_1", "tool_name": "...", "arguments": {...}, "rationale": "..."}], '
+        '"clarification_prompt": null | "..."}\n\n'
         "RULES:\n"
-        "1. ONLY use these 8 tools: stratify_by_1d_feature, get_contact_map, compute_tad_insulation, "
-        "compute_ab_compartments, measure_3d_pairwise_distance, find_3d_spatial_neighbors, "
-        "run_differential_test, emit_viewport_sync.\n"
-        "2. NEVER compute math yourself. Always include emit_viewport_sync as the final step when moving "
-        "to a locus or highlighting bins so 1D/2D/3D views synchronize.\n"
-        "3. You may reference earlier step outputs using '$step_1.field_name' (e.g., '$step_1.insulation_scores').\n"
-        "4. If the user asks a Point-to-Query question ('this bead', 'selected region') and "
-        "viewport.spatial_selection_3d.selected_bins is empty, return plan=[] and a clear clarification_prompt.\n"
-        "5. If the query is underspecified or asks for a nonexistent chromosome/gene, return plan=[] "
-        "with a helpful clarification_prompt.\n\n"
+        "1. ONLY use the 8 tools specified below. Use exact field names and coordinates from DATASET MANIFEST.\n"
+        "2. When comparing TAD insulation between GM12878 and K562, run compute_tad_insulation for each cohort, "
+        "then run_differential_test with group_a_values='$step_1.insulation_scores', group_b_values='$step_2.insulation_scores', test_type='mann_whitney_u'.\n"
+        "3. Always append emit_viewport_sync as the final step for valid queries.\n"
+        "4. If the user asks a Point-to-Query question ('this bead', 'selected bead') and "
+        "viewport.spatial_selection_3d.selected_bins is empty, return plan=[] and a clarification_prompt asking them to click a 3D bead.\n"
+        "5. If the query is underspecified (e.g., asks to stratify by expression without naming a gene, or asks a vague open-ended question), "
+        "return plan=[] and a helpful clarification_prompt.\n"
+        f"{TOOL_SCHEMA_SPEC}\n"
         f"DATASET MANIFEST:\n{json.dumps(compact_meta, indent=2)}"
     )
 
 
 def _plan_with_gemini(
-    store: DataStore, user_query: str, viewport: ViewportState
-) -> tuple[list[PlannedToolCall], str | None]:
-    from google import genai
+    store: DataStore, user_query: str, viewport: ViewportState) -> tuple[list[PlannedToolCall], str | None]:
     from google.genai import types
+    from app.agent.llm_utils import generate_with_retry
 
-    client = genai.Client(api_key=get_settings().gemini_api_key)
     user_payload = (
         f"USER QUERY:\n{user_query}\n\n"
         f"LIVE VIEWPORT STATE:\n{viewport.model_dump_json(indent=2)}"
     )
 
-    resp = client.models.generate_content(
-        model="gemini-2.5-flash",
+    resp = generate_with_retry(
         contents=user_payload,
         config=types.GenerateContentConfig(
             system_instruction=_build_planner_system_prompt(store),
             response_mime_type="application/json",
-            response_schema=_LLMPlanEnvelope,
             temperature=0.0,
         ),
     )
-    envelope = _LLMPlanEnvelope.model_validate_json(resp.text)
+    raw = (resp.text or "").strip()
+    # Strip accidental markdown code fences if present
+    m = re.search(r"```(?:json)?\s*(.*?)```", raw, flags=re.DOTALL)
+    if m:
+        raw = m.group(1).strip()
+
+    envelope = _LLMPlanEnvelope.model_validate_json(raw)
     return envelope.plan, envelope.clarification_prompt
 
 
